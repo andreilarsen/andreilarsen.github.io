@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Basic Animation with Canvas example</title>
+    <title>Andrei Larsen</title>
   </head>
 <body>
         <canvas id="canvas" width="400" height="300">
@@ -50,9 +50,9 @@ function animate() {
   ctx.fillStyle = "#0000FF";
   circle(x, y, 10);
 
-  if (x + dx > width - 5 || x + dx < 5)
+  if (x + dx > width - 5 || x + dx < 0)
     dx = -dx;
-  if (y + dy > height - 5 || y + dy < 5)
+  if (y + dy > height - 5 || y + dy < 0)
     dy = -dy;
 
   x += dx;

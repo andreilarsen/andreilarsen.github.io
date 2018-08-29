@@ -1,23 +1,65 @@
-<!DOCTYPE html>
-<head>
-  <title>Andrei Larsen</title>
-  <style>
-    canvas {
-      border: 5px solid red;
-    }
-  </style>
-</head>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Basic Animation with Canvas example</title>
+  </head>
 <body>
-  <h2 style="text-align:center">Welcome!</h2>
-  <canvas id="testCanvas" width="500" height="400"></canvas>
-  
-  <!-- SCRIPT -->
-  <script>
-    var canvas = document.getElementById("testCanvas");
-    var ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#00FF00";
-    ctx.fillRect(20, 20, 50, 50);
-  </script>
-  
+        <canvas id="canvas" width="400" height="300">
+         If you can see this, your browser does not support Canvas
+        </canvas>
+<script>
+var canvas;  
+var ctx;
+var x = 400;
+var y = 300;
+var dx = 2;
+var dy = 4;
+var width = 400;
+var height = 300; 
+
+function circle(x,y,r) {
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI*2, true);
+  ctx.fill();
+}
+
+function rect(x,y,w,h) {
+  ctx.beginPath();
+  ctx.rect(x,y,w,h);
+  ctx.closePath();
+  ctx.fill();
+}
+
+ 
+function reset() {
+  ctx.clearRect(0, 0, width, height);
+}
+
+function init() {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  return setInterval(animate, 10);
+}
+
+
+function animate() {
+  reset();
+  ctx.fillStyle = "#FAF7F8";
+  rect(0,0,width,height);
+  ctx.fillStyle = "#444444";
+  circle(x, y, 10);
+
+  if (x + dx > width || x + dx < 0)
+    dx = -dx;
+  if (y + dy > height || y + dy < 0)
+    dy = -dy;
+
+  x += dx;
+  y += dy;
+}
+
+init();
+</script>
 </body>
 </html>

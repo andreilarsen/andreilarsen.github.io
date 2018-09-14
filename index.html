@@ -9,57 +9,7 @@
          If you can see this, your browser does not support Canvas
         </canvas>
 <script>
-var canvas;  
-var ctx;
-var x = 400;
-var y = 300;
-var dx = 2;
-var dy = 4;
-var width = 400;
-var height = 300; 
-
-function circle(x,y,r) {
-  ctx.beginPath();
-  ctx.arc(x, y, r, 0, Math.PI*2, true);
-  ctx.fill();
-}
-
-function rect(x,y,w,h) {
-  ctx.beginPath();
-  ctx.rect(x,y,w,h);
-  ctx.closePath();
-  ctx.fill();
-}
-
- 
-function reset() {
-  ctx.clearRect(0, 0, width, height);
-}
-
-function init() {
-  canvas = document.getElementById("canvas");
-  ctx = canvas.getContext("2d");
-  return setInterval(animate, 50);
-}
-
-
-function animate() {
-  reset();
-  ctx.fillStyle = "#FF0000";
-  rect(0,0,width,height);
-  ctx.fillStyle = "#0000FF";
-  circle(x, y, 10);
-
-  if (x + dx > (width) || x + dx < 5)
-    dx = -dx;
-  if (y + dy > (height - 5) || y + dy < 5)
-    dy = -dy;
-
-  x += dx;
-  y += dy;
-}
-
-init();
+alert("Hello World!!!");
 </script>
 </body>
 </html>

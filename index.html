@@ -15,10 +15,11 @@
       var windowWidth = document.getElementById("myCanvas").width;
       var windowHeight = document.getElementById("myCanvas").height;
 			console.log("width: " + windowWidth);
-			console.log("height: " + windowHeight)      var canvas = document.getElementById("myCanvas");
+			console.log("height: " + windowHeight);
+			var canvas = document.getElementById("myCanvas");
       if(!canvas) {
         alert("Could not load canvas. Will exit now.");
-        return;
+				return;
       }
       
       var context = canvas.getContext("2d");
@@ -33,25 +34,21 @@
 				context.fillRect(windowWidth/2, windowHeight/2, windowWidth/2, windowHeight);
 				context.fillStyle = "#000000";
 				context.strokeRect(windowWidth/4, windowHeight/4, windowWidth/2, windowHeight/2);				
+				
 				context.fillStyle = "#ffffff";
 				context.font = "25px cortana";
 				context.textBaseline = "top";
 				context.fillText("Hello World from Canvas!", 150, 96);
 				
-				//var helloWorldImage = new Image();
-				//helloWorldImage.onload = function() {
-				//	context.drawImage(helloWorldImage, windowWidth/4, windowHeight/4);
-				//}
-				//helloWorldImage.src = "hello.jpg";
 				console.log("Finished");
-			};
+			}
 			drawStuff();
     }
   </script>
   
 </head>
 <body>
-  <p>Hey?</p>
+  <p>Hi!!</p>
   <canvas id="myCanvas" width="500" height="500" style="border: 1px solid black">
     Sorry, but your browser does not support HTML5 canvas
   </canvas>

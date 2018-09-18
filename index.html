@@ -11,7 +11,16 @@
     }
     
     function startCanvas() {
-      alert("Page has loaded");
+      alert("Page has LOADED");
+      var canvas = document.getElementById("mycanvas");
+      if(!canvas) {
+        alert("Could not load canvas. Will exit now.");
+        return;
+      }
+      
+      
+      
+      
     }
   </script>
   

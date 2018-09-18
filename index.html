@@ -119,11 +119,11 @@
 						var widthForForLoop = context.measureText("numbers_guessed[] = { ").width;
 						for(var i = 0; i < numbersGuessed.length; i++) {
 							if(i == numbersGuessed.length - 1) {
-								context.fillText(i + " }", 10 + widthForForLoop, 50);
+								context.fillText(numbersGuessed[i] + " }", 10 + widthForForLoop, 50);
 							}
 							else {
-								context.fillText(i + ", ", 10 + widthForForLoop, 50);
-								widthForForLoop += context.measureText(i + ", ").width;
+								context.fillText(numbersGuessed[i] + ", ", 10 + widthForForLoop, 50);
+								widthForForLoop += context.measureText(numbersGuessed[i] + ", ").width;
 							}
 						}
 						context.fillText("Number of guesses: " + guesses, 10, 70);

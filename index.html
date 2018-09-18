@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Website 2.1</title>
+		<title>Website 2.0</title>
 		
 
 		<script>
@@ -19,11 +19,12 @@
 				var canvasHeight = document.getElementById("canvas1").height;
 				var context = canvas.getContext("2d");
 				var guesses = 0;
-				var message = "Guess the number between 1 and 20 (inclusive).";
+				var message = "Guess the number between 0 and 9 (inclusive).";
 				var today = new Date();
-				var number = Math.ceil(Math.random() * 20 + 1);
+				var number = Math.floor(Math.random() * 10);
 				var numbersGuessed = [];
 				var gameOver = false;
+				console.log("size: " + numbersGuessed.length);
 				
 				function initGame() {
 					window.addEventListener("keydown", keyWasPressed, true);

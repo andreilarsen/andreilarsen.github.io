@@ -14,6 +14,8 @@
       alert("The HTML has finished loading");
       var windowWidth = document.getElementById("myCanvas").width;
       var windowHeight = document.getElementById("myCanvas").height;
+			console.log("width: " + windowWidth);
+			console.log("height: " + windowHeight);
       var canvas = document.getElementById("myCanvas");
       if(!canvas) {
         alert("Could not load canvas. Will exit now.");
@@ -33,6 +35,7 @@
 				console.log("Finished.");
         
 			}
+			drawStuff();
     }
   </script>
   

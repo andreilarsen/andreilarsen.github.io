@@ -38,7 +38,13 @@
 				context.fillStyle = "#ffffff";
 				context.font = "25px cortana";
 				context.textBaseline = "top";
-				context.fillText("Hello World from Canvas!", 150, 96);
+				context.fillText("Hello World from Canvas!", 140, 96);
+				
+				var myImage = new Image();
+				myImage.onload = function() {
+					context.drawImage(myImage, windowWidth/4, windowHeight/4);
+				}
+				myImage.src = "hello.jpg";
 				
 				console.log("Finished");
 			}
@@ -48,7 +54,7 @@
   
 </head>
 <body>
-  <p>Hi!!</p>
+  <p>Hello.</p>
   <canvas id="myCanvas" width="500" height="500" style="border: 1px solid black">
     Sorry, but your browser does not support HTML5 canvas
   </canvas>

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Website 2.1</title>
+		<title>Website 2.2</title>
 		
 		<script>
 			window.addEventListener("load", whenPageIsLoaded, false);
@@ -44,7 +44,7 @@
 					drawCanvas();
 				}
 				function getKey(e) {
-					switch(e.keyCode):
+					switch(e.keyCode){
 						case 48:
 						case 96:
 							return 0;
@@ -87,6 +87,7 @@
 							break;
 						default:
 							return 10;
+					}
 				}
 				function doTheMath() {
 					if(numbersGuessed[numbersGuessed.length - 1] == number) {

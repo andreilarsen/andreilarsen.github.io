@@ -5,11 +5,30 @@
 		<title>Website 2.0</title>
 		
 		<script>
-			window.addEventListener
+			window.addEventListener("load", whenPageIsLoaded, false);
+			
+			function whenPageIsLoaded() {
+				canvas1();
+			}
+			
+			function canvas1() {
+				var canvas = document.getElementById("canvas1");
+				if(!canvas) return;
+				var canvasWidth = document.getElementById("canvas1").width;
+				var canvasHeight = document.getElementById("canvas1").height;
+				var context = canvas.getContext("2d");
+				
+				function drawCanvas() {
+					context.fillStyle = "#FF0000";
+					context.fillRect(0, 0, canvasWidth, canvasHeight);
+				}
+				
+				console.log("Finished.");
+			}
 		</script>
 	</head>
 	<body style="font-family: verdana; text-align: center; color: red">
 		<p>Hello world!</p>
-		<canvas style="border: 2px" width=400 height=400>Your browser doesn't support HTML5 Canvas. Upgrade to a new browser!</canvas>
+		<canvas style="border: 2px" id="canvas1" width=400 height=400>Your browser doesn't support HTML5 Canvas. Upgrade to a new browser!</canvas>
 	</body>
 </html>

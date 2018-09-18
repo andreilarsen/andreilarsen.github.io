@@ -15,8 +15,7 @@
       var windowWidth = document.getElementById("myCanvas").width;
       var windowHeight = document.getElementById("myCanvas").height;
 			console.log("width: " + windowWidth);
-			console.log("height: " + windowHeight);
-      var canvas = document.getElementById("myCanvas");
+			console.log("height: " + windowHeight)      var canvas = document.getElementById("myCanvas");
       if(!canvas) {
         alert("Could not load canvas. Will exit now.");
         return;
@@ -41,7 +40,7 @@
 				context.fillText("Hello World from Canvas!", 150, 96);
 				
 				var helloWorldImage = new Image();
-				helloWorldImage.onload() = function() {
+				helloWorldImage.onload = function() {
 					context.drawImage(helloWorldImage, windowWidth/4, windowHeight/4);
 				}
 				helloWorldImage.src = "hello.jpg";

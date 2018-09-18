@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,6 @@
       alert("Page has LOADED");
       var windowWidth = document.getElementById("myCanvas").width;
       var windowHeight = document.getElementById("myCanvas").height;
-      console.log(windowWidth);
-      console.log(windowHeight);
       var canvas = document.getElementById("myCanvas");
       if(!canvas) {
         alert("Could not load canvas. Will exit now.");
@@ -24,14 +22,15 @@
       
       var context = canvas.getContext("2d");
       function drawStuff() {
-							 context.fillStyle = "#ff0000";
-							 context.fillRect(0, 0, windowWidth/2, windowHeight/2);
-							 context.fillStyle = "#00ff00";
-							 context.fillRect(windowWidth/2, 0, windowWidth, windowHeight/2);
-							 context.fillStyle = "#ffff00";
-							 context.fillRect(0, windowHeight/2, windowWidth/2, windowHeight);
-							 context.fillStyle = "#0000ff";
-							 context.fillRect(windowWidth/2, windowHeight/2, windowWidth/2, windowHeight);
+				context.fillStyle = "#ff0000";
+				context.fillRect(0, 0, windowWidth/2, windowHeight/2);
+				context.fillStyle = "#00ff00";
+				context.fillRect(windowWidth/2, 0, windowWidth, windowHeight/2);
+				context.fillStyle = "#ffff00";
+				context.fillRect(0, windowHeight/2, windowWidth/2, windowHeight);
+				context.fillStyle = "#0000ff";
+				context.fillRect(windowWidth/2, windowHeight/2, windowWidth/2, windowHeight);
+			}
     }
   </script>
   

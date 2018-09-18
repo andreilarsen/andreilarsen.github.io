@@ -5,11 +5,21 @@
   <title>Welcome to THE WEBSITE!</title>
   
   <script>
-    alert("Hello World!");
+    window.addEventListener("load", myOnLoadFunction, false);
+    function myOnLoadFunction() {
+      startCanvas();
+    }
+    
+    function startCanvas() {
+      alert("Page loaded");
+    }
   </script>
   
 </head>
 <body>
-  <p>Hello World!</p>  
+  <p>Hello World!</p>
+  <canvas id="mycanvas" width=500 height=700>
+    Sorry, but your browser does not support HTML5 canvas
+  </canvas>
 </body>
 </html>

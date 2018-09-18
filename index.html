@@ -40,6 +40,7 @@
 					numbersGuessed[numbersGuessed.length] = String.fromCharCode(e.keyCode);
 					guesses++;
 					doTheMath();
+					drawCanvas();
 				}
 				function doTheMath() {
 					if(numbersGuessed[numbersGuessed.length - 1] == number) {
@@ -67,7 +68,7 @@
 						context.fillText(message, canvasWidth/2, 10);
 						context.textAlign = "left";
 						context.fillText("Today's date is " + today, 10, 30);
-						context.fillText("numbers_guessed[] = {", 10, 50);
+						context.fillText("numbers_guessed[] = { ", 10, 50);
 						var widthForForLoop = context.measureText("numbers_guessed[] = { ").width;
 						for(var i = 0; i < numbersGuessed.length; i++) {
 							if(i == numbersGuessed.length - 1) {
@@ -78,6 +79,7 @@
 								widthForForLoop += context.measureText(i + ", ").width;
 							}
 						}
+						context.fillText("Number of guesses: " + guesses, 10, 70);
 					}
 				}
 				initGame();

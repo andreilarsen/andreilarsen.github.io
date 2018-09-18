@@ -32,8 +32,14 @@
 				context.fillRect(0, windowHeight/2, windowWidth/2, windowHeight);
 				context.fillStyle = "#0000ff";
 				context.fillRect(windowWidth/2, windowHeight/2, windowWidth/2, windowHeight);
-				console.log("Finished.");
-        
+				
+				context.fillStyle = "#ffffff";
+				context.font = "25px cortana";
+				context.textBaseline = "top";
+				context.fillText("Hello World from Canvas!", 150, 96);
+				
+				
+        console.log("Finished");
 			}
 			drawStuff();
     }

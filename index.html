@@ -1,91 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Welcome to THE WEBSITE!</title>
-  
-  <script>
-    window.addEventListener("load", myOnLoadFunction, false);
-    function myOnLoadFunction() {
-      startCanvas();
-    }
-    
-    function startCanvas() {
-      alert("The HTML has finished loading");
-      var windowWidth = document.getElementById("myCanvas").width;
-      var windowHeight = document.getElementById("myCanvas").height;
-			console.log("width: " + windowWidth);
-			console.log("height: " + windowHeight);
-			var canvas = document.getElementById("myCanvas");
-      if(!canvas) {
-        alert("Could not load canvas. Will exit now.");
-				return;
-      }
-      
-      var context = canvas.getContext("2d");
-      function drawStuff() {
-				context.fillStyle = "#ff0000";
-				context.fillRect(0, 0, windowWidth/2, windowHeight/2);
-				context.fillStyle = "#00ff00";
-				context.fillRect(windowWidth/2, 0, windowWidth, windowHeight/2);
-				context.fillStyle = "#ffff00";
-				context.fillRect(0, windowHeight/2, windowWidth/2, windowHeight);
-				context.fillStyle = "#0000ff";
-				context.fillRect(windowWidth/2, windowHeight/2, windowWidth/2, windowHeight);
-				context.fillStyle = "#000000";
-				context.strokeRect(windowWidth/4, windowHeight/4, windowWidth/2, windowHeight/2);				
-				
-				context.fillStyle = "#ffffff";
-				context.font = "25px cortana";
-				context.textBaseline = "top";
-				context.fillText("Hello World from Canvas!", 125, 96);
-				
-				var myImage = new Image();
-				myImage.onload = function() {
-					context.drawImage(myImage, windowWidth/4, windowHeight/4);
-				}
-				myImage.src = "hello.jpg";
-				
-				console.log("Finished");
-			}
-			drawStuff();
-    }
-  </script>
-  
-</head>
-<body>
-  <p>Hello.</p>
-  <canvas id="myCanvas" width="500" height="500" style="border: 1px solid black">
-    Sorry, but your browser does not support HTML5 canvas
-  </canvas>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Website 2.0</title>
+		
+		<script>
+			alert("Hello world!");
+		</script>
+	</head>
+	<body style="font-family: verdana; text-align: center; color: red">
+		<p>Hello world!</p>
+	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

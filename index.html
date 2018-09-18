@@ -12,12 +12,18 @@
     
     function startCanvas() {
       alert("Page has LOADED");
+      var windowWidth = document.getElementById("myCanvas").width;
+      var windowHeight = document.getElementById("myCanvas").height;
+      console.log(windowWidth);
+      console.log(windowHeight);
       var canvas = document.getElementById("myCanvas");
       if(!canvas) {
         alert("Could not load canvas. Will exit now.");
         return;
       }
       
+      var context = canvas.getContext("2d");
+     
       
       
       
@@ -27,7 +33,7 @@
 </head>
 <body>
   <p>Hello World!</p>
-  <canvas id="mycanvas" width="800" height="500" style="border: 1px solid black">
+  <canvas id="myCanvas" width="800" height="500" style="border: 1px solid black">
     Sorry, but your browser does not support HTML5 canvas
   </canvas>
 </body>

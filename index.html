@@ -40,6 +40,11 @@
 				context.textBaseline = "top";
 				context.fillText("Hello World from Canvas!", 150, 96);
 				
+				var helloWorldImage = new Image();
+				helloWorldImage.onload() = function() {
+					context.drawImage(helloWorldImage, windowWidth/4, windowHeight/4);
+				}
+				helloWorldImage.src = "hello.jpg";
 				
         console.log("Finished");
 			}

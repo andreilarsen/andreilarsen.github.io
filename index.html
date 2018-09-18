@@ -17,13 +17,67 @@
 				var canvasWidth = document.getElementById("canvas1").width;
 				var canvasHeight = document.getElementById("canvas1").height;
 				var context = canvas.getContext("2d");
+				var guesses = 0;
+				var message = "Guess the number between 1 and 20 (inclusive).";
+				var today = new Date();
+				var number = Math.ceiling(Math.random() * 20 + 1);
+				var numbersGuessed = [];
+				var gameOver = false;
 				
-				function drawCanvas() {
-					context.fillStyle = "#FF0000";
-					context.fillRect(0, 0, canvasWidth, canvasHeight);
+				function initGame() {
+					window.addEventListener("keydown", keyWasPressed, true);
+					drawCanvas();
 				}
-				
-				drawCanvas();
+				function keyWasPressed(e) {
+					if(gameOver) {
+						gameOver = false;
+						guesses = 0;
+						initGame();
+					}
+					numbersGuessed[numbersGuessed.length] = String.fromCharCode(e.keyCode);
+					guesses++;
+					doTheMath();
+				}
+				function doTheMath() {
+					if(numbersGuessed[numbersGuessed.length - 1] == number) {
+						gameOver = true;
+					}
+				}
+				function drawCanvas() {
+					if(gameOver) {
+						context.fillStyle = "#ff0000";
+						context.fillRect(0, 0, canvasWidth, canvasHeight);
+						context.textBaseline = "middle";
+						context.textAlign = "center";
+						context.fillStyle = "#ffff00";
+						context.textSize = "40px";
+						context.fillText("You Won!", canvasWidth/2, canvasHeight/2);
+						context.textSize = "10px";
+						context.fillText("Press any key to play again.", canvasWidth/2, 3/4*canvasHeight);
+					}
+					else {
+						context.fillStyle = "#ccff66";
+						context.fillRect(0, 0, canvasWidth, canvasHeight);
+						context.fillStyle = "#000000";
+						context.textSize = "15px";
+						context.textAlign = "center";
+						context.fillText(message, canvasWidth/2, 10);
+						context.textAlign = "left";
+						context.fillText("Today's date is " + today, 10, 30);
+						context.fillText("numbers_guessed[] = {", 10, 50);
+						var widthForForLoop = context.measureText("numbers_guessed[] = { ").width;
+						for(var i = 0; i < numbersGuessed.length; i++) {
+							if(i == numbersGuessed.length - 1) {
+								context.fillText(i + " }", 10 + widthForForLoop, 50);
+							}
+							else {
+								context.fillText(i + ", ", 10 + widthForForLoop, 50);
+								widthForForLoop += context.measureText(i + ", ").width;
+							}
+						}
+					}
+				}
+				initGame();
 				
 				console.log("Finished.");
 			}
@@ -31,6 +85,6 @@
 	</head>
 	<body style="font-family: verdana; text-align: center; color: red">
 		<p>Hello world!</p>
-		<canvas style="border: 1px solid black; text-align: left" id="canvas1" width=400 height=400>Your browser doesn't support HTML5 Canvas. Upgrade to a new browser!</canvas>
+		<canvas style="border: 1px solid black" id="canvas1" width=400 height=400>Your browser doesn't support HTML5 Canvas. Upgrade to a new browser!</canvas>
 	</body>
 </html>

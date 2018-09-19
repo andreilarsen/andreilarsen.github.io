@@ -26,6 +26,8 @@
 				console.log("size: " + numbersGuessed.length);
 				
 				function initGame() {
+					numbersGuessed = [];
+					number = Math.floor(Math.random() * 10);
 					window.addEventListener("keydown", keyWasPressed, true);
 					drawCanvas();
 				}

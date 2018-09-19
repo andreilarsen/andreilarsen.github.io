@@ -36,14 +36,15 @@
 						gameOver = false;
 						guesses = 0;
 						initGame();
+					} else {
+						if(getKey(e) >= 0 && getKey(e) < 10) {
+							numbersGuessed.push(getKey(e));
+							guesses++;
+						}
+						console.log(getKey(e));
+						doTheMath();
+						drawCanvas();
 					}
-					if(getKey(e) >= 0 && getKey(e) < 10) {
-						numbersGuessed.push(getKey(e));
-						guesses++;
-					}
-					console.log(getKey(e));
-					doTheMath();
-					drawCanvas();
 				}
 				function getKey(e) {
 					switch(e.keyCode){

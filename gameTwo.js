@@ -32,15 +32,15 @@ function canvas2() {
     context.fillRect(0, 0, canvas.width, canvas.height);
   }
   
-  //function drawPlayer(x, y) {
-  //  context.fillStyle = "#ffff00";
-  //  context.arc(x, y, 75, 0, 2*Math.PI, false);
-  //}
+  function drawPlayer(x, y) {
+    context.fillStyle = "#ffff00";
+    context.arc(x, y, 75, 0, 2*Math.PI, false);
+  }
   
   function drawCanvas() {
     drawBackground();
     //while(!gameOver) {
-  //    drawPlayer(50, 50);
+      drawPlayer(50, 50);
     //}
   }
   

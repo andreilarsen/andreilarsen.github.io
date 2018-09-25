@@ -10,4 +10,6 @@ function canvas2() {
   if(!canvas) return;
   var context = canvas.getContext("2d");
   console.log("The width is " + canvas.width + " and the height is " + canvas.height + ".");
+  context.fillStyle(0xFFFF00);
+  context.fillRect(20, 20, 40, 80);
 }

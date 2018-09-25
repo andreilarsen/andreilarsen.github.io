@@ -1,7 +1,7 @@
 window.addEventListener("load", whenPageIsLoaded, false);
 
 function whenPageIsLoaded() {
-  console.log("Successfully loaded the page.");
+  console.log("Successfully loaded thE page.");
   canvas2();
 }
 
@@ -35,6 +35,7 @@ function canvas2() {
   function drawPlayer(x, y) {
     context.fillStyle = "#ffff00";
     context.arc(x, y, 75, 0, 2*Math.PI, false);
+    context.stroke();
   }
   
   function drawCanvas() {

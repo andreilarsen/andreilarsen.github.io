@@ -24,6 +24,7 @@ function canvas2() {
   
   function keyWasPressed(e) {
     console.log("Key was pressed");
+    if(e.keyCode() = 'q') gameOver = true;
   }
   
   function drawBackground() {

@@ -12,10 +12,10 @@ function canvas2() {
   console.log("The width is " + canvas.width + " and the height is " + canvas.height + ".");
   var gameOver = false;
   
-  function initGame() {
-    gameOver = false;
+  //function initGame() {
+  //  gameOver = false;
     //drawCanvas();
-  }
+  //}
   
   //function drawCanvas() {
     context.fillStyle("#00ff00");

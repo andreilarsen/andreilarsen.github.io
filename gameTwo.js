@@ -1,7 +1,7 @@
 window.addEventListener("load", whenPageIsLoaded, false);
 
 function whenPageIsLoaded() {
-  console.log("Successfully loaded the page.");
+  console.log("Successfully loaded The page.");
   canvas2();
 }
 
@@ -50,6 +50,8 @@ function canvas2() {
         break;
       default:
         console.log("Unknown key pressed. keyCode=" + e.keyCode);
+        deltaY = 0;
+        deltaX = 0;
     }
     drawCanvas();
   }
@@ -74,8 +76,9 @@ function canvas2() {
       fillRect(0, 0, canvas.width, canvas.height);
       return;
     }
-    drawPlayer(playerX, playerY);
-    
+    while(!gameOver) {
+      drawPlayer(playerX + deltaX, playerY + deltaY);
+    }
   }
   
   initGame();

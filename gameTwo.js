@@ -14,13 +14,13 @@ function canvas2() {
   
   function initGame() {
     gameOver = false;
-    context.fillStyle("#ff0000");
-    context.fillRect(0, 0, canvas.width, canvas.height);
     drawCanvas();
   }
   
   function drawCanvas() {
-    console.log("Drawing canvas...");
+    context.fillStyle("#00ff00");
+    context.fillRect(0, 0, canvas.width, canvas.height);
   }
   
+  initGame();
 }

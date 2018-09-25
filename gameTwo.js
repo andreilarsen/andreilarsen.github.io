@@ -13,8 +13,13 @@ function canvas2() {
   var gameOver = false;
   
   function initGame() {
-    
+    gameOver = false;
+    drawCanvas();
   }
-  context.fillStyle("#ffff00");
-  context.fillRect(20, 20, 40, 80);
+  
+  function drawCanvas() {
+    context.fillStyle("#ffff00");
+    context.fillRect(20, 20, 40, 80);
+  }
+  
 }

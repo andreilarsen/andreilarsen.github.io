@@ -18,7 +18,7 @@ function canvas2() {
   //}
   
   //function drawCanvas() {
-    context.fillStyle("#00ff00");
+    context.fillStyle = "#00ff00";
     context.fillRect(0, 0, canvas.width, canvas.height);
   //}
   

@@ -1,7 +1,7 @@
 window.addEventListener("load", whenPageIsLoaded, false);
 
 function whenPageIsLoaded() {
-  console.log("Successfully loaded thE page.");
+  console.log("Successfully loaded the page.");
   canvas2();
 }
 
@@ -34,15 +34,19 @@ function canvas2() {
   
   function drawPlayer(x, y) {
     context.fillStyle = "#ffff00";
-    context.arc(x, y, 75, 0, 2*Math.PI, false);
+    context.beginPath();
+    context.arc(x, y, 25, 0, 2*Math.PI, false);
     context.stroke();
+    context.fill();
   }
   
   function drawCanvas() {
     drawBackground();
-    //while(!gameOver) {
-      drawPlayer(100, 100);
-    //}
+    for(var i = 0; i < 3; i++) {
+      for(var j = 0; j < 3; j++) {
+        drawPlayer(75 + 75*i, 75 + 75*j);
+      }
+    }
   }
   
   initGame();

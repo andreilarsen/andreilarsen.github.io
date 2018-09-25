@@ -1,7 +1,7 @@
 window.addEventListener("load", whenPageIsLoaded, false);
 
 function whenPageIsLoaded() {
-  console.log("Successfully loaded The page.");
+  console.log("Successfully loaded the page.");
   canvas2();
 }
 
@@ -12,15 +12,15 @@ function canvas2() {
   console.log("The width is " + canvas.width + " and the height is " + canvas.height + ".");
   var gameOver = false;
   
-  //function initGame() {
-  //  gameOver = false;
-    //drawCanvas();
-  //}
+  function initGame() {
+    gameOver = false;
+    drawCanvas();
+  }
   
-  //function drawCanvas() {
+  function drawCanvas() {
     context.fillStyle = "#00ff00";
     context.fillRect(0, 0, canvas.width, canvas.height);
-  //}
+  }
   
-  //initGame();
+  initGame();
 }

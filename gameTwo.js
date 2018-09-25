@@ -10,6 +10,11 @@ function canvas2() {
   if(!canvas) return;
   var context = canvas.getContext("2d");
   console.log("The width is " + canvas.width + " and the height is " + canvas.height + ".");
-  context.fillStyle(#ffff00);
+  var gameOver = false;
+  
+  function initGame() {
+    
+  }
+  context.fillStyle("#ffff00");
   context.fillRect(20, 20, 40, 80);
 }

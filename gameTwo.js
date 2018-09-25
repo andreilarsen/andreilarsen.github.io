@@ -76,9 +76,9 @@ function canvas2() {
       fillRect(0, 0, canvas.width, canvas.height);
       return;
     }
-    while(!gameOver) {
+    //while(!gameOver) {
       drawPlayer(playerX + deltaX, playerY + deltaY);
-    }
+    //}
   }
   
   initGame();

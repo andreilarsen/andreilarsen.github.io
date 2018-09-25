@@ -1,7 +1,7 @@
 window.addEventListener("load", whenPageIsLoaded, false);
 
 function whenPageIsLoaded() {
-  console.log("Successfully loaded the page.");
+  console.log("Successfully loaded tHe page.");
   canvas2();
 }
 

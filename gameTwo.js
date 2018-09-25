@@ -41,7 +41,7 @@ function canvas2() {
   function drawCanvas() {
     drawBackground();
     //while(!gameOver) {
-      drawPlayer(50, 50);
+      drawPlayer(100, 100);
     //}
   }
   

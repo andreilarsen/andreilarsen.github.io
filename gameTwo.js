@@ -18,14 +18,14 @@ function canvas2() {
   
   function initGame() {
     gameOver = false;
-    //window.addEventListener("keydown", keyWasPressed, true);
+    window.addEventListener("keydown", keyWasPressed, true);
     drawCanvas();
   }
   
-  //function keyWasPressed(e) {
-  //  console.log("Key was pressed");
-  //  if(e.keyCode() = 'q') gameOver = true;
-  //}
+  function keyWasPressed(e) {
+    console.log("Key was pressed");
+    if(e.keyCode == 81) gameOver = true;
+  }
   
   function drawBackground() {
     context.fillStyle = "#00ff00";

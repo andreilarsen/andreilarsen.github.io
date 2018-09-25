@@ -1,7 +1,7 @@
 window.addEventListener("load", whenPageIsLoaded, false);
 
 function whenPageIsLoaded() {
-  console.log("Successfully loaded the page.");
+  console.log("Successfully loaded The page.");
   canvas2();
 }
 
@@ -76,9 +76,8 @@ function canvas2() {
       fillRect(0, 0, canvas.width, canvas.height);
       return;
     }
-    //while(!gameOver) {
-      drawPlayer(playerX, playerY);
-    //}
+
+    drawPlayer(playerX + deltaX, playerY + deltaY);
   }
   
   initGame();

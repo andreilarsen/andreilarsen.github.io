@@ -24,7 +24,43 @@ function canvas2() {
   
   function keyWasPressed(e) {
     console.log("Key was pressed");
-    if(e.keyCode == 81) gameOver = true;
+    switch(e.keyCode) {
+      case 81:
+        console.log("Looks like you decided to quit!");
+        gameOver = true;
+        break;
+      case 38:
+        console.log("Up pressed");
+        up = -1;
+        down = 0;
+        left = 0;
+        right = 0;
+        break;
+      case 40:
+        console.log("Down pressed");
+        up = 0;
+        down = 1;
+        left = 0;
+        right = 0;
+        break;
+      case 37:
+        console.log("Left pressed");
+        up = 0;
+        down = 0;
+        left = -1;
+        right = 0;
+        break;
+      case 39:
+        console.log("Right pressed");
+        up = 0;
+        down = 0;
+        left = 0;
+        right = 1;
+        break;
+      default:
+        console.log("Unknown key pressed. keyCode=" + e.keyCode);
+    }
+    drawCanvas();
   }
   
   function drawBackground() {
@@ -42,11 +78,13 @@ function canvas2() {
   
   function drawCanvas() {
     drawBackground();
-    for(var i = 0; i < 3; i++) {
-      for(var j = 0; j < 3; j++) {
-        drawPlayer(75 + 75*i, 75 + 75*j);
-      }
+    if(gameOver) {
+      context.fillStyle = "#0000ff";
+      fillRect(0, 0, canvas.width, canvas.height);
+      return;
     }
+    drawPlayer(75 + 75*i, 75 + 75*j);
+    
   }
   
   initGame();

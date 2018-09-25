@@ -11,5 +11,5 @@ function canvas2() {
   var canvasWidth = canvas.width;
   var canvasHeight = canvas.height;
   var context = canvas.getContext("2d");
-  console.log("The width is " + canvasWidth + " and the height is " + canvasHeight ".");
+  console.log("The width is " + canvasWidth + " and the height is " + canvasHeight + ".");
 }

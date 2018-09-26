@@ -1,7 +1,6 @@
-window.addEventListener("load", whenPageIsLoaded, false);
+window.addEventListener("load", whenPageLoads, false);
 
-function whenPageIsLoaded() {
-  console.log("Successfully loaded The page.");
+function whenPageLoads() {
   canvas2();
 }
 
@@ -9,18 +8,41 @@ function canvas2() {
   var canvas = document.getElementById("canvas2");
   if(!canvas) return;
   var context = canvas.getContext("2d");
-  console.log("The width is " + canvas.width + " and the height is " + canvas.height + ".");
+  var player = new Player(75, 75, 25, "#ffff00");
+  var square = new Square(40, 40, 40, "#ff0000");
+  var points = 0;
   var gameOver = false;
-  var playerX = 50;
-  var playerY = 50;
-  var deltaX = 0;
-  var deltaY = 0;
   
-  function initGame() {
-    gameOver = false;
-    window.addEventListener("keydown", keyWasPressed, true);
-    drawCanvas();
+  function Player(x, y, r, c) {
+    this.x = x;
+    this.y = y;
+    this.radius = r;
+    this.color = "c";
+    Player.prototype.draw = function() {
+      context.fillStyle = this.color;
+      context.beginPath();
+      context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, false);
+      context.stroke();
+      context.fill();
+    }
   }
+  
+  function Square(x, y, l, c) {
+    this.x = x;
+    this.y = y;
+    this.length = l;
+    this.color = c;
+    Square.prototype.draw = function() {
+      context.fillStyle = c;
+      context.fillRect(x, y, x + l, y + l);
+    }
+    Square.prototype.relocate = function() {
+      this.x = Math.floor(Math.random() * (canvas.width - this.length));
+      this.y = Math.floor(Math.random() * (canvas.height - this.length));
+    }
+  }
+  
+  window.addEventListener("keydown", keyWasPressed, true);
   
   function keyWasPressed(e) {
     switch(e.keyCode) {
@@ -30,30 +52,23 @@ function canvas2() {
         break;
       case 38:
         console.log("Up pressed");
-        deltaY = -1;
-        deltaX = 0;
+        player.y -= 5;
         break;
       case 40:
         console.log("Down pressed");
-        deltaY = 1;
-        deltaX = 0;
+        player.y += 5;
         break;
       case 37:
         console.log("Left pressed");
-        deltaY = 0;
-        deltaX = -1;
+        player.x -= 5;
         break;
       case 39:
         console.log("Right pressed");
-        deltaY = 0;
-        deltaX = 1;
+        player.x += 5;
         break;
       default:
         console.log("Unknown key pressed. keyCode=" + e.keyCode);
-        deltaY = 0;
-        deltaX = 0;
     }
-    drawCanvas();
   }
   
   function drawBackground() {
@@ -61,32 +76,50 @@ function canvas2() {
     context.fillRect(0, 0, canvas.width, canvas.height);
   }
   
-  function drawPlayer(x, y) {
-    context.fillStyle = "#ffff00";
-    context.beginPath();
-    context.arc(x, y, 25, 0, 2*Math.PI, false);
-    context.stroke();
-    context.fill();
-  }
-  
-  function drawCanvas() {
-    drawBackground();
-    if(gameOver) {
-      context.fillStyle = "#0000ff";
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      return;
+  function overlapExists() {
+    if(firstQuadrant(player.x, player.y, square.x, square.y + square.length) ||
+       secondQuadrant(player.x, player.y, square.x + square.length, square.y + square.length) ||
+       thirdQuadrant(player.x, player.y, square.x + square.length, square.y) ||
+       fourthQuadrant(player.x, player.y, square.x, square.y) || flatOverlap()) {
+      
     }
-
-    playerX += deltaX * 5;
-    deltaX = 0;
-    playerY += deltaY * 5;
-    deltaY = 0;
-    if(playerX < 25) playerX = 25;
-    if(playerX > 375) playerX = 375;
-    if(playerY < 25) playerY = 25;
-    if(playerY > 375) playerY = 375;
-    drawPlayer(playerX, playerY);
+    function firstQuadrant(x1, y1, x2, y2) {
+      if(x2 > x1 && y2 <= y1) {
+        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
+      }
+      return false;
+    }
+    function secondQuadrant(x1, y1, x2, y2) {
+      if(x1 >= x2 && y2 < y1) {
+        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
+      }
+      return false;
+    }
+    function thirdQuadrant(x1, y1, x2, y2) {
+      if(x1 > x2 && y1 <= y2) {
+        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
+      }
+      return false;
+    }
+    function fourthQuadrant(x1, y1, x2, y2) {
+      if(x1 <= x2 && y1 < y2) {
+        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
+      }
+      return false;
+    }
+    function flatOverlap() {
+      return false;
+    }
   }
   
-  initGame();
+  while(!gameOver) {
+    drawBackground();
+    player.draw();
+    square.draw();
+    if(overlapExists()) {
+      points ++;
+      console.log("You just scored! Your score is " + points);
+      square.relocate();
+    }
+  }
 }

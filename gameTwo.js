@@ -77,9 +77,9 @@ function canvas2() {
       return;
     }
 
-    playerX += deltaX * 3;
+    playerX += deltaX * 5;
     deltaX = 0;
-    playerY += deltaY * 3;
+    playerY += deltaY * 5;
     deltaY = 0;
     drawPlayer(playerX, playerY);
   }

@@ -62,10 +62,6 @@ function canvas2() {
   }
   
   function drawPlayer(x, y) {
-    if(x < 12) x = 12;
-    if(x > 388) x = 388;
-    if(y < 12) y = 12;
-    if(y > 388) y = 388;
     context.fillStyle = "#ffff00";
     context.beginPath();
     context.arc(x, y, 25, 0, 2*Math.PI, false);
@@ -85,6 +81,10 @@ function canvas2() {
     deltaX = 0;
     playerY += deltaY * 5;
     deltaY = 0;
+    if(playerX < 12) playerX = 25;
+    if(playerX > 388) playerX = 375;
+    if(playerY < 12) playerY = 25;
+    if(playerY > 388) playerY = 375;
     drawPlayer(playerX, playerY);
   }
   

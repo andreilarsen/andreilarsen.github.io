@@ -81,10 +81,10 @@ function canvas2() {
     deltaX = 0;
     playerY += deltaY * 5;
     deltaY = 0;
-    if(playerX < 12) playerX = 25;
-    if(playerX > 388) playerX = 375;
-    if(playerY < 12) playerY = 25;
-    if(playerY > 388) playerY = 375;
+    if(playerX < 25) playerX = 25;
+    if(playerX > 375) playerX = 375;
+    if(playerY < 25) playerY = 25;
+    if(playerY > 375) playerY = 375;
     drawPlayer(playerX, playerY);
   }
   

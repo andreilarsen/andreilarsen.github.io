@@ -73,7 +73,7 @@ function canvas2() {
     drawBackground();
     if(gameOver) {
       context.fillStyle = "#0000ff";
-      fillRect(0, 0, canvas.width, canvas.height);
+      context.fillRect(0, 0, canvas.width, canvas.height);
       return;
     }
 

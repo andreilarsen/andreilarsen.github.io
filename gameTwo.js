@@ -14,10 +14,10 @@ function canvas2() {
   var gameOver = false;
   
   function Player(xPos, yPos, r, c) {
-    this.x = xPos;
-    this.y = yPos;
-    this.radius = r;
-    this.color = c;
+    var x = xPos;
+    var y = yPos;
+    var radius = r;
+    var color = c;
     //var _this = this;
     Player.prototype.draw = function() {
       if(x > canvas.width - radius) x = canvas.width - radius;

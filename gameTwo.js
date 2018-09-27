@@ -18,31 +18,33 @@ function canvas2() {
     this.y = y;
     this.radius = r;
     this.color = c;
+    var _this = this;
     Player.prototype.draw = function() {
-      if(x > canvas.width - radius) x = canvas.width - radius;
-      if(x < radius) x = radius;
-      if(y > canvas.height - radius) x = canvas.height - radius;
-      if(y < radius) y = radius;
-      context.fillStyle = this.color;
+      if(_this.x > canvas.width - _this.radius) _this.x = canvas.width - _this.radius;
+      if(_this.x < _this.radius) _this.x = _this.radius;
+      if(_this.y > canvas.height - _this.radius) _this.x = canvas.height - _this.radius;
+      if(_this.y < _this.radius) _this.y = _this.radius;
+      context.fillStyle = _this.color;
       context.beginPath();
-      context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, false);
+      context.arc(_this.x, _this.y, _this.radius, 0, 2*Math.PI, false);
       context.stroke();
       context.fill();
     }
   }
   
-  function Square(x, y, l, c) {
-    this.x = x;
-    this.y = y;
-    this.length = l;
+  function Square(xPos, yPos, sideLength, c) {
+    this.x = xPos;
+    this.y = yPos;
+    this.length = sideLength;
     this.color = c;
+    var _this = this;
     Square.prototype.draw = function() {
       context.fillStyle = c;
-      context.fillRect(x, y, l, l);
+      context.fillRect(_this.x, _this.y, _this.length, _this.length);
     }
     Square.prototype.relocate = function() {
-      x = Math.floor(Math.random() * (canvas.width - this.length));
-      y = Math.floor(Math.random() * (canvas.height - this.length));
+      _this.x = Math.floor(Math.random() * (canvas.width - _this.length));
+      _this.y = Math.floor(Math.random() * (canvas.height - _this.length));
     }
   }
   

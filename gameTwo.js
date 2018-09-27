@@ -69,7 +69,7 @@ function canvas2() {
       default:
         console.log("Unknown key pressed. keyCode=" + e.keyCode);
     }
-    update();
+    //update();
   }
   
   function drawBackground() {
@@ -77,7 +77,7 @@ function canvas2() {
     context.fillRect(0, 0, canvas.width, canvas.height);
   }
   
-  function overlapExists() {
+  /*function overlapExists() {
     if(firstQuadrant(player.x, player.y, square.x, square.y + square.length) ||
        secondQuadrant(player.x, player.y, square.x + square.length, square.y + square.length) ||
        thirdQuadrant(player.x, player.y, square.x + square.length, square.y) ||
@@ -111,16 +111,16 @@ function canvas2() {
     function flatOverlap() {
       return false;
     }
-  }
+  }*/
   
-  function update() {
+  //function update() {
     drawBackground();
-    player.draw();
-    square.draw();
-    if(overlapExists()) {
-      points ++;
-      console.log("You just scored! Your score is " + points);
-      square.relocate();
-    }
-  }
+    //player.draw();
+    //square.draw();
+    //if(overlapExists()) {
+      //points ++;
+      //console.log("You just scored! Your score is " + points);
+      //square.relocate();
+    //}
+  //}
 }

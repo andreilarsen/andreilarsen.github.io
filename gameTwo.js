@@ -41,8 +41,8 @@ function canvas2() {
       context.fillRect(x, y, l, l);
     }
     Square.prototype.relocate = function() {
-      this.x = Math.floor(Math.random() * (canvas.width - this.length));
-      this.y = Math.floor(Math.random() * (canvas.height - this.length));
+      x = Math.floor(Math.random() * (canvas.width - this.length));
+      y = Math.floor(Math.random() * (canvas.height - this.length));
     }
   }
   

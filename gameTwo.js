@@ -57,7 +57,7 @@ function canvas2() {
         gameOver = true;
         break;
       case 82:
-        console.log("Redrawing square...");
+        console.log("Redrawing square.");
         square.relocate();
         break;
       case 38:

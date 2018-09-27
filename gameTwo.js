@@ -60,6 +60,9 @@ function canvas2() {
         console.log("Redrawing square.");
         square.relocate();
         break;
+      case 83:
+        console.log("Status: x=" + player.x + " y=" + player.y);
+        break;
       case 38:
         console.log("Up pressed");
         player.y -= 5;

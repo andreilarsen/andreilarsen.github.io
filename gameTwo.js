@@ -37,14 +37,13 @@ function canvas2() {
     this.y = yPos;
     this.length = sideLength;
     this.color = c;
-    var _this = this;
-    Square.prototype.draw = function() {
+    this.draw = function() {
       context.fillStyle = c;
-      context.fillRect(_this.x, _this.y, _this.length, _this.length);
+      context.fillRect(this.x, this.y, this.length, this.length);
     }
-    Square.prototype.relocate = function() {
-      _this.x = Math.floor(Math.random() * (canvas.width - _this.length));
-      _this.y = Math.floor(Math.random() * (canvas.height - _this.length));
+    this.relocate = function() {
+      this.x = Math.floor(Math.random() * (canvas.width - this.length));
+      this.y = Math.floor(Math.random() * (canvas.height - this.length));
     }
   }
   

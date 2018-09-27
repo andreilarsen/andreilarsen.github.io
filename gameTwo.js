@@ -9,8 +9,8 @@ function canvas2() {
   if(!canvas) return;
   var context = canvas.getContext("2d");
   var player = new Player(75, 75, 25, "#ffff00");
-  var square = new Square(40, 40, 40, "#ff0000");
-  //var points = 0;
+  var square = new Square(40, 40, 20, "#ff0000");
+  var points = 0;
   var gameOver = false;
   
   function Player(x, y, r, c) {
@@ -81,7 +81,7 @@ function canvas2() {
     context.fillRect(0, 0, canvas.width, canvas.height);
   }
   
-  /*function overlapExists() {
+  function overlapExists() {
     if(firstQuadrant(player.x, player.y, square.x, square.y + square.length) ||
        secondQuadrant(player.x, player.y, square.x + square.length, square.y + square.length) ||
        thirdQuadrant(player.x, player.y, square.x + square.length, square.y) ||
@@ -115,17 +115,17 @@ function canvas2() {
     function flatOverlap() {
       return false;
     }
-  }*/
+  }
   
   function update() {
     drawBackground();
     player.draw();
     square.draw();
-    //if(overlapExists()) {
-      //points ++;
-      //console.log("You just scored! Your score is " + points);
-      //square.relocate();
-    //}
+    if(overlapExists()) {
+      points ++;
+      console.log("You just scored! Your score is " + points);
+      square.relocate();
+    }
   }
   
   drawBackground();

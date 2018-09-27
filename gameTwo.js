@@ -69,6 +69,7 @@ function canvas2() {
       default:
         console.log("Unknown key pressed. keyCode=" + e.keyCode);
     }
+    update();
   }
   
   function drawBackground() {
@@ -112,7 +113,7 @@ function canvas2() {
     }
   }
   
-  while(!gameOver) {
+  function update() {
     drawBackground();
     player.draw();
     square.draw();

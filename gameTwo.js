@@ -14,19 +14,19 @@ function canvas2() {
   var gameOver = false;
   
   function Player(xPos, yPos, r, c) {
-    var x = xPos;
-    var y = yPos;
-    var radius = r;
-    var color = c;
+    this.x = xPos;
+    this.y = yPos;
+    this.radius = r;
+    this.color = c;
     //var _this = this;
-    Player.prototype.draw = function() {
-      if(x > canvas.width - radius) x = canvas.width - radius;
-      if(x < radius) x = radius;
-      if(y > canvas.height - radius) x = canvas.height - radius;
-      if(y < radius) y = radius;
-      context.fillStyle = color;
+    this.draw = function() {
+      if(this.x > canvas.width - this.radius) this.x = canvas.width - this.radius;
+      if(this.x < this.radius) this.x = this.radius;
+      if(this.y > canvas.height - this.radius) this.x = canvas.height - this.radius;
+      if(this.y < this.radius) this.y = this.radius;
+      context.fillStyle = this.color;
       context.beginPath();
-      context.arc(x, y, radius, 0, 2*Math.PI, false);
+      context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, false);
       context.stroke();
       context.fill();
     }

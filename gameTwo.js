@@ -38,7 +38,7 @@ function canvas2() {
     this.color = c;
     Square.prototype.draw = function() {
       context.fillStyle = c;
-      context.fillRect(x, y, x + l, y + l);
+      context.fillRect(x, y, l, l);
     }
     Square.prototype.relocate = function() {
       this.x = Math.floor(Math.random() * (canvas.width - this.length));

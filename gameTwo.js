@@ -13,20 +13,20 @@ function canvas2() {
   var points = 0;
   var gameOver = false;
   
-  function Player(x, y, r, c) {
-    this.x = x;
-    this.y = y;
+  function Player(xPos, yPos, r, c) {
+    this.x = xPos;
+    this.y = yPos;
     this.radius = r;
     this.color = c;
-    var _this = this;
+    //var _this = this;
     Player.prototype.draw = function() {
-      if(_this.x > canvas.width - _this.radius) _this.x = canvas.width - _this.radius;
-      if(_this.x < _this.radius) _this.x = _this.radius;
-      if(_this.y > canvas.height - _this.radius) _this.x = canvas.height - _this.radius;
-      if(_this.y < _this.radius) _this.y = _this.radius;
-      context.fillStyle = _this.color;
+      if(x > canvas.width - radius) x = canvas.width - radius;
+      if(x < radius) x = radius;
+      if(y > canvas.height - radius) x = canvas.height - radius;
+      if(y < radius) y = radius;
+      context.fillStyle = color;
       context.beginPath();
-      context.arc(_this.x, _this.y, _this.radius, 0, 2*Math.PI, false);
+      context.arc(x, y, radius, 0, 2*Math.PI, false);
       context.stroke();
       context.fill();
     }

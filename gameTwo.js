@@ -69,8 +69,7 @@ function canvas2() {
       default:
         console.log("Unknown key pressed. keyCode=" + e.keyCode);
     }
-    //update();
-    player.draw();
+    update();
   }
   
   function drawBackground() {
@@ -114,7 +113,7 @@ function canvas2() {
     }
   }*/
   
-  //function update() {
+  function update() {
     drawBackground();
     player.draw();
     //square.draw();
@@ -123,5 +122,5 @@ function canvas2() {
       //console.log("You just scored! Your score is " + points);
       //square.relocate();
     //}
-  //}
+  }
 }

@@ -51,7 +51,7 @@ function canvas2() {
   function keyWasPressed(e) {
     switch(e.keyCode) {
       case 81:
-        console.log("Looks like you decided to quit!");
+        console.log("Looks like you decided to quit...");
         gameOver = true;
         break;
       case 82:

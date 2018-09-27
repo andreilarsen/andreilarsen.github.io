@@ -58,13 +58,13 @@ function canvas2() {
         square = new Square(300, 300, 20, "#ff0000");
         drawBackground();
         player.draw();
-        square.update();
+        square.draw();
       }
       return;
     }
     switch(e.keyCode) {
       case 81:
-        console.log("Looks like you decided to quit123");
+        console.log("Looks like you decided to quit!");
         gameOver = true;
         break;
       case 82:

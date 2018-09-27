@@ -123,4 +123,7 @@ function canvas2() {
       //square.relocate();
     //}
   }
+  
+  drawBackground();
+  player.draw();
 }

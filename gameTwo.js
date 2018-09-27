@@ -61,7 +61,8 @@ function canvas2() {
         square.relocate();
         break;
       case 83:
-        console.log("Status: x=" + player.x + " y=" + player.y);
+        console.log("Player: x=" + player.x + " y=" + player.y);
+        console.log("Square: x=" + square.x + " y=" + square.y);
         break;
       case 38:
         console.log("Up pressed");

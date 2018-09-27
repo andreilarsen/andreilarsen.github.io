@@ -9,7 +9,7 @@ function canvas2() {
   if(!canvas) return;
   var context = canvas.getContext("2d");
   var player = new Player(75, 75, 25, "#ffff00");
-  var square = new Square(40, 40, 20, "#ff0000");
+  var square = new Square(3000, 3000, 20, "#ff0000");
   var points = 0;
   var gameOver = false;
   

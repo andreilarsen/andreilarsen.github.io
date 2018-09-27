@@ -9,8 +9,8 @@ function canvas2() {
   if(!canvas) return;
   var context = canvas.getContext("2d");
   var player = new Player(75, 75, 25, "#ffff00");
-  var square = new Square(40, 40, 40, "#ff0000");
-  var points = 0;
+  //var square = new Square(40, 40, 40, "#ff0000");
+  //var points = 0;
   var gameOver = false;
   
   function Player(x, y, r, c) {
@@ -27,7 +27,7 @@ function canvas2() {
     }
   }
   
-  function Square(x, y, l, c) {
+  /*function Square(x, y, l, c) {
     this.x = x;
     this.y = y;
     this.length = l;
@@ -40,7 +40,7 @@ function canvas2() {
       this.x = Math.floor(Math.random() * (canvas.width - this.length));
       this.y = Math.floor(Math.random() * (canvas.height - this.length));
     }
-  }
+  }*/
   
   window.addEventListener("keydown", keyWasPressed, true);
   
@@ -70,6 +70,7 @@ function canvas2() {
         console.log("Unknown key pressed. keyCode=" + e.keyCode);
     }
     //update();
+    player.draw();
   }
   
   function drawBackground() {
@@ -115,7 +116,7 @@ function canvas2() {
   
   //function update() {
     drawBackground();
-    //player.draw();
+    player.draw();
     //square.draw();
     //if(overlapExists()) {
       //points ++;

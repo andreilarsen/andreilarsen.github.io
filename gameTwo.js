@@ -50,6 +50,18 @@ function canvas2() {
   window.addEventListener("keydown", keyWasPressed, true);
   
   function keyWasPressed(e) {
+    if(gameOver) {
+      if(e.keyCode == 78) {
+        points = 0;
+        gameOver = false;
+        player = new Player(75, 75, 25, "#ffff00");
+        square = new Square(300, 300, 20, "#ff0000");
+        drawBackground();
+        player.draw();
+        square.update();
+      }
+      return;
+    }
     switch(e.keyCode) {
       case 81:
         console.log("Looks like you decided to quit123");
@@ -98,6 +110,11 @@ function canvas2() {
   }
   
   function update() {
+    if(gameOver) {
+      context.fillStyle = "#0000ff";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
     drawBackground();
     player.draw();
     square.draw();

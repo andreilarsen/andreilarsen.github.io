@@ -82,39 +82,10 @@ function canvas2() {
   }
   
   function overlapExists() {
-    if(firstQuadrant(player.x, player.y, square.x, square.y + square.length) ||
-       secondQuadrant(player.x, player.y, square.x + square.length, square.y + square.length) ||
-       thirdQuadrant(player.x, player.y, square.x + square.length, square.y) ||
-       fourthQuadrant(player.x, player.y, square.x, square.y) || flatOverlap()) {
-      
+    if(Math.sqrt(Math.pow(player.x - (square.x + square.l/2), 2) + Math.pow(player.x - (square.y + square.l/2), 2)) < player.radius) {
+      return true;
     }
-    function firstQuadrant(x1, y1, x2, y2) {
-      if(x2 > x1 && y2 <= y1) {
-        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
-      }
-      return false;
-    }
-    function secondQuadrant(x1, y1, x2, y2) {
-      if(x1 >= x2 && y2 < y1) {
-        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
-      }
-      return false;
-    }
-    function thirdQuadrant(x1, y1, x2, y2) {
-      if(x1 > x2 && y1 <= y2) {
-        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
-      }
-      return false;
-    }
-    function fourthQuadrant(x1, y1, x2, y2) {
-      if(x1 <= x2 && y1 < y2) {
-        if(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) < player.radius) return true;
-      }
-      return false;
-    }
-    function flatOverlap() {
-      return false;
-    }
+    return false;
   }
   
   function update() {

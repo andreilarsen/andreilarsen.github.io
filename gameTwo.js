@@ -54,6 +54,10 @@ function canvas2() {
         console.log("Looks like you decided to quit!?1");
         gameOver = true;
         break;
+      case 82:
+        console.log("Redrawing square...");
+        square.relocate();
+        break;
       case 38:
         console.log("Up pressed");
         player.y -= 5;

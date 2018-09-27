@@ -91,7 +91,7 @@ function canvas2() {
   }
   
   function overlapExists() {
-    if(Math.sqrt(Math.pow(player.x - (square.x + square.l/2), 2) + Math.pow(player.y - (square.y + square.l/2), 2)) < player.radius) {
+    if(square.x > player.x - player.radius && square.x < player.x + player.radius && square.y < player.y + player.radius && square.y > player.y - player.radius) {
       return true;
     }
     else return false;

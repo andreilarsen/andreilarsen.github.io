@@ -17,7 +17,7 @@ function canvas2() {
     this.x = x;
     this.y = y;
     this.radius = r;
-    this.color = "c";
+    this.color = c;
     Player.prototype.draw = function() {
       context.fillStyle = this.color;
       context.beginPath();

@@ -51,7 +51,7 @@ function canvas2() {
   function keyWasPressed(e) {
     switch(e.keyCode) {
       case 81:
-        console.log("Looks like you decided to quit!");
+        console.log("Looks like you decided to quit!?");
         gameOver = true;
         break;
       case 38:
@@ -85,7 +85,7 @@ function canvas2() {
     if(Math.sqrt(Math.pow(player.x - (square.x + square.l/2), 2) + Math.pow(player.x - (square.y + square.l/2), 2)) < player.radius) {
       return true;
     }
-    return false;
+    else return false;
   }
   
   function update() {
